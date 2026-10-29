@@ -1,0 +1,142 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1500" height="1160" viewBox="0 0 1500 1160" role="img" aria-labelledby="title description">
+  <title id="title">React Fundamentals project file map</title>
+  <desc id="description">Diagram of how the HTML entry point loads React, how components import styles and assets, and how project configuration files support development.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto">
+      <path d="M0 0 10 5 0 10Z" fill="#64748b"/>
+    </marker>
+    <marker id="arrow-purple" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto">
+      <path d="M0 0 10 5 0 10Z" fill="#7c3aed"/>
+    </marker>
+    <style>
+      text { font-family: Inter, "Segoe UI", Arial, sans-serif; fill: #172033; }
+      .title { font-size: 32px; font-weight: 700; }
+      .subtitle { font-size: 16px; fill: #526078; }
+      .section { font-size: 19px; font-weight: 700; }
+      .file { font-size: 17px; font-weight: 700; }
+      .detail { font-size: 14px; fill: #526078; }
+      .small { font-size: 13px; fill: #526078; }
+      .card { fill: #fff; stroke: #cbd5e1; stroke-width: 1.5; }
+      .core { fill: #f5f3ff; stroke: #8b5cf6; stroke-width: 2; }
+      .style-card { fill: #eff6ff; stroke: #60a5fa; stroke-width: 1.5; }
+      .asset-card { fill: #f0fdf4; stroke: #4ade80; stroke-width: 1.5; }
+      .tool-card { fill: #f8fafc; stroke: #cbd5e1; stroke-width: 1.3; }
+      .arrow { fill: none; stroke: #64748b; stroke-width: 2; marker-end: url(#arrow); }
+      .arrow-purple { fill: none; stroke: #7c3aed; stroke-width: 2; marker-end: url(#arrow-purple); }
+      .dashed { stroke-dasharray: 6 6; }
+      .tag { font-size: 12px; font-weight: 600; fill: #64748b; }
+    </style>
+  </defs>
+
+  <rect width="1500" height="1160" fill="#f8fafc"/>
+  <text x="54" y="58" class="title">React Fundamentals — file map</text>
+  <text x="54" y="88" class="subtitle">The app runs from the HTML entry point into React; styles, images, and public SVG symbols are pulled in where used.</text>
+
+  <text x="54" y="142" class="section">Browser runtime: entry point and imports</text>
+
+  <rect x="55" y="170" width="300" height="130" rx="14" class="core"/>
+  <text x="80" y="207" class="file">index.html</text>
+  <text x="80" y="235" class="detail">Page shell; provides the #root mount</text>
+  <text x="80" y="259" class="detail">and loads /src/main.jsx as a module.</text>
+  <text x="80" y="283" class="tag">HTML ENTRY</text>
+
+  <path d="M355 235 H420" class="arrow-purple"/>
+  <text x="365" y="220" class="tag">loads</text>
+
+  <rect x="425" y="170" width="320" height="130" rx="14" class="core"/>
+  <text x="450" y="207" class="file">src/main.jsx</text>
+  <text x="450" y="235" class="detail">Loads global CSS and App.jsx;</text>
+  <text x="450" y="259" class="detail">mounts the React tree into #root.</text>
+  <text x="450" y="283" class="tag">REACT BOOTSTRAP</text>
+
+  <path d="M745 235 H810" class="arrow-purple"/>
+  <text x="757" y="220" class="tag">renders</text>
+
+  <rect x="815" y="170" width="350" height="130" rx="14" class="core"/>
+  <text x="840" y="207" class="file">src/App.jsx</text>
+  <text x="840" y="235" class="detail">Main UI component; owns the counter state</text>
+  <text x="840" y="259" class="detail">and renders the page content.</text>
+  <text x="840" y="283" class="tag">UI + COMPONENT LOGIC</text>
+
+  <rect x="55" y="370" width="300" height="95" rx="12" class="card"/>
+  <text x="78" y="405" class="file">public/favicon.svg</text>
+  <text x="78" y="433" class="detail">Browser tab icon referenced by index.html.</text>
+  <path d="M205 300 V345 H205 V365" class="arrow"/>
+  <text x="218" y="339" class="tag">icon link</text>
+
+  <rect x="425" y="370" width="320" height="95" rx="12" class="style-card"/>
+  <text x="448" y="405" class="file">src/index.css</text>
+  <text x="448" y="433" class="detail">Global theme, typography, layout, dark mode.</text>
+  <path d="M585 300 V365" class="arrow"/>
+  <text x="598" y="342" class="tag">imports</text>
+
+  <rect x="815" y="370" width="350" height="95" rx="12" class="style-card"/>
+  <text x="838" y="405" class="file">src/App.css</text>
+  <text x="838" y="433" class="detail">Component-specific layout and visual styling.</text>
+  <path d="M990 300 V365" class="arrow"/>
+  <text x="1003" y="342" class="tag">imports</text>
+
+  <text x="1210" y="350" class="small">Assets used in App.jsx</text>
+  <rect x="1200" y="370" width="245" height="75" rx="12" class="asset-card"/>
+  <text x="1220" y="401" class="file">assets/hero.png</text>
+  <text x="1220" y="426" class="detail">Decorative hero image</text>
+  <path d="M1165 223 H1182 V407 H1195" class="arrow"/>
+
+  <rect x="1200" y="460" width="245" height="75" rx="12" class="asset-card"/>
+  <text x="1220" y="491" class="file">assets/react.svg</text>
+  <text x="1220" y="516" class="detail">React logo image</text>
+  <path d="M1165 235 H1180 V497 H1195" class="arrow"/>
+
+  <rect x="1200" y="550" width="245" height="75" rx="12" class="asset-card"/>
+  <text x="1220" y="581" class="file">assets/vite.svg</text>
+  <text x="1220" y="606" class="detail">Vite logo image</text>
+  <path d="M1165 247 H1178 V587 H1195" class="arrow"/>
+
+  <rect x="815" y="500" width="350" height="95" rx="12" class="asset-card"/>
+  <text x="838" y="535" class="file">public/icons.svg</text>
+  <text x="838" y="563" class="detail">SVG symbol library used via &lt;use href&gt;.</text>
+  <path d="M990 300 V495" class="arrow"/>
+  <text x="1003" y="482" class="tag">references public symbols</text>
+
+  <text x="54" y="675" class="section">Project support files</text>
+  <text x="54" y="702" class="subtitle">These configure commands, dependencies, linting, and repository housekeeping; they are not part of the browser render tree.</text>
+
+  <rect x="55" y="730" width="330" height="115" rx="12" class="tool-card"/>
+  <text x="78" y="766" class="file">package.json</text>
+  <text x="78" y="794" class="detail">Project metadata, React dependencies,</text>
+  <text x="78" y="817" class="detail">and dev/build/lint/preview scripts.</text>
+
+  <rect x="410" y="730" width="330" height="115" rx="12" class="tool-card"/>
+  <text x="433" y="766" class="file">package-lock.json</text>
+  <text x="433" y="794" class="detail">Locks the exact dependency tree so</text>
+  <text x="433" y="817" class="detail">installs are reproducible.</text>
+
+  <rect x="765" y="730" width="330" height="115" rx="12" class="tool-card"/>
+  <text x="788" y="766" class="file">vite.config.js</text>
+  <text x="788" y="794" class="detail">Enables the React plugin for Vite's</text>
+  <text x="788" y="817" class="detail">development server and production build.</text>
+
+  <rect x="1120" y="730" width="325" height="115" rx="12" class="tool-card"/>
+  <text x="1143" y="766" class="file">.oxlintrc.json</text>
+  <text x="1143" y="794" class="detail">Configures Oxlint React/Oxc rules,</text>
+  <text x="1143" y="817" class="detail">including the Rules of Hooks check.</text>
+
+  <rect x="55" y="870" width="430" height="115" rx="12" class="tool-card"/>
+  <text x="78" y="906" class="file">.gitignore</text>
+  <text x="78" y="934" class="detail">Keeps dependencies, build output, logs,</text>
+  <text x="78" y="957" class="detail">and local/editor files out of Git.</text>
+
+  <rect x="520" y="870" width="430" height="115" rx="12" class="tool-card"/>
+  <text x="543" y="906" class="file">README.md (app)</text>
+  <text x="543" y="934" class="detail">Template documentation for React + Vite,</text>
+  <text x="543" y="957" class="detail">plugins, and React Compiler setup.</text>
+
+  <rect x="985" y="870" width="460" height="115" rx="12" class="tool-card"/>
+  <text x="1008" y="906" class="file">README.md (repository root)</text>
+  <text x="1008" y="934" class="detail">Separate from the app README; contains</text>
+  <text x="1008" y="957" class="detail">only the repository title in this workspace.</text>
+
+  <rect x="55" y="1030" width="1390" height="72" rx="12" fill="#eef2ff" stroke="#c7d2fe" stroke-width="1.3"/>
+  <text x="80" y="1060" class="detail">Flow summary: index.html → src/main.jsx → src/App.jsx</text>
+  <text x="80" y="1085" class="detail">Solid arrows show imports/references; purple arrows highlight the primary HTML-to-React startup path.</text>
+</svg>
