@@ -1,8 +1,7 @@
 import "./App.css";
-import { Welcome } from "./Welcome";
-import Button from "./Button";
-
-import React from "react";
+import { Welcome } from "./components/Welcome";
+import Button from "./components/Button";
+import { UserProfile } from "./components/UserProfile";
 
 function App() {
   return (
@@ -10,6 +9,7 @@ function App() {
       <h1>Hello Julien!</h1>
       <Welcome />
       <Button />
+      <UserProfile />
     </div>
   );
 }
